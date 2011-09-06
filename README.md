@@ -7,6 +7,12 @@ Now it is messy just wrapped around to do some initial testing. I need to clean 
 
 0.0.0 - initial commit
 
+# Todo
+- move it to lib module
+- add versioning in module
+- add configuration other then shell env settings, maybe json
+- better handling of errors
+
 # Build
 
   `make` or `make run` starts server
