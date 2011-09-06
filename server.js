@@ -9,11 +9,13 @@ var Db = require('mongodb').Db,
     Server = require('mongodb').Server,
     GridStore = require('mongodb').GridStore;
 
+
+var database_name = process.env["SIZIF_DATABASE"] ? process.env["SIZIF_DATABASE"] : "panda_development" ;
 var host = process.env['MONGO_NODE_DRIVER_HOST'] != null ? process.env['MONGO_NODE_DRIVER_HOST'] : 'localhost';
 var port = process.env['MONGO_NODE_DRIVER_PORT'] != null ? process.env['MONGO_NODE_DRIVER_PORT'] : Connection.DEFAULT_PORT;
 
 console.log("Connecting to Mongo at " + host + ":" + port);
-var mongo_db = new Db('panda_development', new Server(host, port, {}), {native_parser:true});
+var mongo_db = new Db(database_name, new Server(host, port, {}), {native_parser:true});
 
 mongo_db.open(function(err, db) {
   http.createServer(function(request, response) {
