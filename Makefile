@@ -1,6 +1,6 @@
 run:
 	node server.js
 test:
-	echo "IMPLEMENT VOWS ?"
+	vows test/* --spec
 deps:
-	npm install mongodb --mongodb:native
+	npm install mongodb --mongodb:native && npm install vows
